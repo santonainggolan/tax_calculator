@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.santo.shopee.taxcalcul.model.TaxAmountDTO;
 import com.santo.shopee.taxcalcul.model.TaxModel;
 import com.santo.shopee.taxcalcul.model.TaxModelDetail;
 import com.santo.shopee.taxcalcul.model.TaxModelResponse;
@@ -54,5 +55,10 @@ public class TaxController {
 	@RequestMapping(value ="save_one",method = RequestMethod.POST)
 	public String saveOne(@RequestBody TaxModel taxModel){
 		return taxService.saveOne(taxModel);
+	}
+	
+	@RequestMapping(value ="save_all",method = RequestMethod.POST)
+	public String saveAll(@RequestBody TaxAmountDTO listTaxModel){
+		return taxService.saveAll(listTaxModel.getData());
 	}
 }

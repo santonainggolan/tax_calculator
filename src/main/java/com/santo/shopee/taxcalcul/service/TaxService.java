@@ -27,6 +27,11 @@ public class TaxService {
 		taxRepository.save(taxModel);
 		return "Success";
 	}
+	
+	public String saveAll(List<TaxModel> listTaxModel) {
+		taxRepository.saveAll(listTaxModel);
+		return "Success";
+	}
 
 	public TaxModelDetail mapData(TaxModelDetail taxModelDetails, TaxModel taxModel) {
 		// TODO Auto-generated method stub
